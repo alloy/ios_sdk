@@ -11,7 +11,8 @@
 
 @protocol ADJSdkClickHandler
 
-- (id)initWithStartsSending:(BOOL)startsSending;
+- (id)initWithStartsSending:(id<ADJActivityHandler>)activityHandler
+              startsSending:(BOOL)startsSending;
 
 - (void)pauseSending;
 - (void)resumeSending;
@@ -22,6 +23,7 @@
 
 @interface ADJSdkClickHandler : NSObject <ADJSdkClickHandler>
 
-+ (id<ADJSdkClickHandler>)handlerWithStartsSending:(BOOL)startsSending;
++ (id<ADJSdkClickHandler>)handlerWithStartsSending:(id<ADJActivityHandler>)activityHandler
+                                     startsSending:(BOOL)startsSending;
 
 @end
